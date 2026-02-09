@@ -1,0 +1,521 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    -webkit-font-smoothing: antialiased;
+
+}
+
+@font-face{
+    font-family:'Apercu Pro';
+    src: /* url(fonts/apercu-mono-regular-pro.woff2) format('woff2'), */
+        url(fonts/apercu-regular-pro.woff2) format('woff2');
+    font-weight:normal;
+    font-style: normal;
+}
+@font-face{
+    font-family:'Tobias';
+    src: url(fonts/Tobias-Light.woff2) format('woff2');
+    font-weight:800;
+
+}
+body{
+    min-height: 100vh;
+    color:hsl(222.2 84% 4.9%);
+    font-family: Apercu Pro, sans-serif;
+    letter-spacing: normal;
+    font-style: normal;
+}
+body{
+    display: block;
+}
+
+.head{
+    --tw-bg-opacity: 1;
+    background-color: rgb(245 245 235 / var(--tw-bg-opacity));
+    border-bottom: 1px solid black;
+    display:flex;
+    justify-content:center;
+    flex-grow: 1;
+    width:100%;
+    height:4rem;
+    padding:16px 40px 16px 0px; 
+}
+.position{
+    position:fixed; z-index: 800;
+}
+.container{
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    width:100%;
+}
+
+.first_item img{
+    margin-left: 40px;
+    margin-right: 40px;
+    width:97px;
+    height:auto;
+    max-width:100%;
+}
+.second_item{
+    display:flex;
+    gap:2rem; /*1rem = 16px */
+    align-items:center;
+
+}
+.apply{
+    border: 1.6px solid black; border-radius: 40px; padding:8.6px; 
+    transition: all ease-in;
+}
+.apply:hover,.port:hover{
+    background-color: #A3C9A8; border: 1.6px solid #A3C9A8; border-radius: 40px; }
+
+.second_item a{
+    text-decoration: none; padding:8.6px; 
+    transition: all ease-in;
+    color : inherit;
+    font-family:  Apercu Pro, sans-serif;
+    letter-spacing: 2px; }
+.second_item .nav-bar{
+    font-size:x-large; border:0px; background-color: inherit;  color: inherit;
+    font-style:inherit;}
+
+
+/* menu css styling done below this  */
+.menu{
+    display: none; 
+    background: #ffffff; 
+    font-family: 'Apercu Mono','Courier ',monospace;  position: fixed; margin-top: 4.4vw;  width:100%;  height:25vw;   z-index:800;                                         
+}
+.grid-child{
+    display: grid; grid-template-columns: 1fr 1fr 1fr 1fr ; row-gap: 2.2vw; column-gap: 5.9vw;
+    margin: 2.9vw 8vw 3vw 3vw;
+}
+.grid-child  p{font-size: 0.74rem ; letter-spacing: 2px;}
+.grid-child h6{ font-family:'Tobias',serif ;
+    line-height:2.5vw;
+    font-size:1.3rem;
+    letter-spacing: -0.7px;
+    width:90%;}
+.second-child{
+    display: flex;
+}
+.grid-child a{ text-decoration: none; color: inherit;}
+.grid-child a:hover{ color:#42A050; }
+#menu-toggle{ display: none; }
+#menu-toggle:checked ~ .menu{
+    display: block;
+}
+
+.nav-bar{ transition: transform 0.3s ease;}
+
+/* small transition for the nav-bar */
+#menu-toggle:checked ~ .head .nav-bar{
+    transform: rotate(45deg);
+   
+}
+
+
+
+/* main1 / hero content styling done here */
+
+.founder-hero {
+  padding: 9rem 10vw 4rem 12vw;
+  background:linear-gradient(to right, #CDD3E3,#A9B6D3, #8696C1);
+  color: rgb(0, 0, 0);
+  font-weight: thin;
+  display: flex; gap: 6rem;
+  align-items: center;
+}
+
+.founder-hero h1 {
+    font-family:'Tobias',serif ;
+    line-height:3.4vw;
+    font-size:3.7rem;
+    letter-spacing: -1px;
+    width:90%;
+}
+.content{
+    display: flex;
+    flex-direction: column; gap: 1.1rem;
+}
+.content span{ font-size: 0.89rem ; letter-spacing: 2px;}
+
+.founder-hero p {
+  font-family: Apercu Pro, sans-serif;
+  max-width: 800px;font-size: 1.2vw;
+  line-height: 1.2; 
+  margin-top: 1.8vw;
+}
+/* mutiple rings animation  */
+.sphere{
+  width: 100%; height: 100%; position:relative; 
+  transform-style:preserve-3d; 
+}
+.ring{
+  position: absolute; 
+  top:50%; left: 50%;
+  border: 3.2px solid rgba(227, 227, 227, 0.843); padding: 30px;
+  border-radius: 21%; transform-style: preserve-3d;
+  animation: rotate-3d 7s linear  infinite; background-color: #86a0c154;
+}
+.sphere-container{
+    width: 400px;
+    height: 400px;
+    position: relative; 
+    perspective: 1000px; 
+}
+.ring1 { width: 320px; height: 320px; margin: -150px 0 0 -150px;--z:20px; opacity: 0.9; 
+}
+.ring2 { width: 270px; height: 270px;  margin: -130px 0 0 -130px; --z:50px;
+  opacity: 0.75; 
+}
+
+.ring3 { width: 230px; height: 230px; margin: -110px 0 0 -110px;  --z:80px; 
+  opacity: 0.8;}
+
+.ring4 { width: 160px; height: 160px; margin: -75px 0 0 -75px; --z:110px;  
+  opacity: 0.54;}
+
+.ring5 { width: 90px; height: 90px; margin: -40px 0 0 -40px; --z:130px;  
+  opacity: 0.54;}
+
+.ring6 { width: 25px; height: 25px;  margin: -17px 0 0 -17px; --z:148px;  
+opacity: 0.7; padding:19px;}
+/* for negative side of the rotating container */
+.ring-1{  width: 270px; height: 270px; margin: -130px 0 0 -130px; --z:-29px;
+  opacity: 0.75; }
+
+.ring-2 { width: 230px; height: 230px; margin: -110px 0 0 -110px;  --z:-70px; 
+  opacity: 0.8;}
+
+.ring-3{ width: 160px; height: 160px; margin: -75px 0 0 -75px; --z:-100px;  
+  opacity: 0.54;}
+
+.ring-4{ width: 60px; height: 60px; margin: -40px 0 0 -40px; --z:-130px;  
+  opacity: 0.54; border-radius: 50%; 
+}
+
+@keyframes rotate-3d{
+  0%{
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(var(--z)) ;
+    box-shadow: 0.8px 0.8px 25px #4e7f94; 
+    border-color: #2b4dbb;
+  }
+  100%{
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(350deg) translateZ(var(--z));
+    box-shadow: 1.6px 1.6px 20px #505869;
+    border-color: #416848;
+  }
+}
+
+/* base styling for main2 container */
+.main2{
+    --tw-bg-opacity: 1;
+    background-color: rgb(245 245 235 / var(--tw-bg-opacity));
+}
+.margin{
+    margin:0 15vw 0 10vw;
+}
+h2{font-family:'Tobias',serif ;
+    line-height:3.4vw;
+    font-size:2.9rem;
+    letter-spacing: -1px;
+    width:90%;}
+/* main2 section 1 is css styling done here */
+.main2-sect-1{
+    display: flex;
+    gap:3.5vw;
+    padding:6.8rem 1rem 6.8rem 1rem;
+    width:81%;
+}
+.first-item{
+    display: flex; flex-direction: column;
+    gap:3.2vw;
+} 
+.first-item span{
+    width:34rem;
+    font-family: Apercu Pro, sans-serif;
+    font-size:18px;
+    line-height:21px;
+}
+.second-item img{
+    max-width:36.7vw ; position: relative; 
+    border-radius: 10px; 
+}
+.change-title::after{content: "LEARN MORE" !important; font-size: 3rem !important;}
+.anchor{
+    display:flex; align-items: center; 
+    border: 1.8px solid black; border-radius: 18px; box-sizing: border-box;
+    width:29%; height: auto;
+    padding:1.7px 3.2px 1.7px 13px ;
+    letter-spacing: 1.6px;
+}
+.anchor span{
+    font-size: 0.89rem;
+    width: 17vw;
+}
+.anchor .arrow{
+    background: black; color: aliceblue; border-radius: 50%;
+    padding:4px;
+    transition: all 500ms ease;
+    width:57px; height:auto;
+    text-align: center;
+}
+.anchor .arrow:hover{
+   transform:translateX(8px) ;
+   background-color: rgb(150, 254, 181);
+}
+/* main2 section 2 is been css styling done here */
+.main2-sect-2{
+    display: flex; flex-direction: column;
+    gap:3.2vw;
+}
+.first-child{display: flex; flex-direction: column; gap:1.3vw;}
+.first-child span{
+    font-family: Apercu Pro, sans-serif;
+    font-size:18.5px;
+    line-height:21px;
+}
+.second-child {
+    display: flex; font-size: 0.94rem;
+    gap:2.1vw;
+    letter-spacing: 2px;
+    padding-left: 1vw;
+}
+.second-child .button{
+    border-radius: 12px;
+}
+button{
+    border: none; border-radius: 10px;
+    padding:13px; letter-spacing: 2px; background-color:inherit;
+}
+.default-green{background-color:#A3C9A8;
+}
+.clicked{
+    background-color:#A3C9A8;
+}
+
+.grid-layout{
+    display: grid;
+    grid-template-columns: repeat(4,277px);
+    row-gap: 3vw;
+    column-gap: 1.2vw;
+}
+
+.grid-layout img{
+    width:100%; height:auto;
+}  
+/* img hover effects */
+.zoom{overflow: hidden; transition: transform 3s ease-in-out; border-radius: 20px; position: relative;}
+
+.zoom::after {
+  content: "USA";
+  color: rgb(174, 226, 101); font-size: 2.3vw;
+  position: absolute; left: 0;  bottom: -50px; 
+  display: flex; flex-direction:column; justify-content:flex-end; 
+  padding: 0px 0px 10px 20px;
+  width: 100%;
+  height: 130%; /* height of shadow overlay */
+  background: rgba(0, 0, 0, 0.279);
+  opacity: 0; 
+  transition: all 0.4s ease;
+}
+.zoom:hover::after {
+  opacity: 1.3;
+  bottom: 0px;
+
+}
+/* giving associated places name to render on the image  */
+.zoom2::after{content: "VARIOUS";}
+.zoom3::after{content: "LATIN AMERICA"}
+.zoom4::after{content: "EURASIA"}
+.zoom6::after{content:  "MENA"}
+.zoom9::after{content: "EGYPT"}
+.zoom11::after{content: "JAPAN";}
+
+.zoom:hover{
+    img{
+     transform: scale(1.28);
+     border-radius: 20px;}
+}
+/* discription styling for every card */
+.about-card{ display:flex; flex-direction: column; margin-top: 1.5vw;
+    gap:1.4vw;  
+
+}
+.greybox{
+    padding:5px; background-color: rgb(200, 200, 200); border-radius: 19px;
+    width:fit-content; padding-left: 13px; font-size: 0.85rem;
+    padding-right: 13px;
+}
+
+.about-card h2{ font-size:2rem ; line-height: 2.3vw;
+}
+.whitebox{
+    border: 1.6px solid black; border-radius:13px ;
+    width:12%; padding:3px 13px 3px 11px; 
+    transition: all 0.4s linear;
+}
+/* hover effects for the grid-container */
+.hover:hover{
+   .whitebox{
+       background-color: #A3C9A8; border: 1.6px solid  #A3C9A8;}
+   .greybox{ background-color: #A3C9A8 ;}
+}
+
+/* now main2 section 3 container   css styling is done here */
+.main2-sect-3{
+    display: flex; flex-direction: column;
+    margin:7.2vw 8vw 9vw 7vw;
+}
+.lets-help1{
+   display: flex; flex-direction: column; gap:0.9vw;
+   align-items: center;
+   background-color: #FEFFFE; border-radius: 13.9px;
+   padding:1.6vw 5.4vw;  
+   width:100%;
+   transition: all 1.1s ease-in ;
+
+}
+.lets-help1 a{ display: flex; align-items: center; gap:10px;
+    margin-top:15px; 
+    letter-spacing: 1.7px;
+     font-size: 0.91rem;
+     transition: all 0.4s linear;
+     
+}
+
+.lets-help1 .started-arrow{border: 1.2px solid black; 
+    border-radius: 50%;
+    padding: 5px 7.5px; 
+}
+.lets-help1 h2{ font-size: 2.1rem; width:70%; }
+
+.lets-help1 a:hover{
+    gap:20px;
+    color:#42A050 ;
+    .started-arrow{
+        border: 1.2px solid #42A050 ;
+    }
+}
+.lets-help1:hover{
+    background: linear-gradient(to right,#ffffff 0%, #C4EBCB 100%);
+    box-shadow: 5px 10px 20px -5px rgba(0,0,0,0.1);
+}
+
+.lets-help2{
+    display: flex; flex-direction: column;
+    gap:2vw;  margin:4.7vw 0.9vw  0  3vw;
+}
+.grid-parent{
+    display: grid; 
+    grid-template-columns: 0.9fr 1fr;
+    row-gap:3vw;
+    column-gap: 0.3vw;
+}
+.grid-parent img{
+    width:13%;
+}
+.items{
+    display: flex; flex-direction: column; gap:16px;
+    line-height: 18px;
+    width:98.4%;
+} 
+.items h2{
+    font-size: 2rem; line-height: 32px; width:86%;
+}
+.items span{
+    width: 90%;
+}
+/* now main2 section 4 container styling starts from here */
+.main2-sect-4{ 
+    padding-bottom: 4vw;
+}
+.topic , .disclaim{
+    font-family:'Apercu Mono','Courier ',monospace ;
+    letter-spacing: 1px;
+    line-height: 1.6;
+}
+
+.topic{
+    margin:10px 0px 30px; 
+    transition: all ease-out;
+}
+.topic span{ font-size: 0.9rem;padding-left: 5px;border-radius: 16px;
+}
+.topic:hover{
+    background-color:#A3C9A8;
+    border:2px solid #A3C9A8 ; border-radius:16px;
+    width:10%; 
+}
+
+.disclaim{
+    font-size: 0.68rem;
+}
+
+
+
+/* footer container design */
+
+footer{
+    --tw-bg-opacity:1;
+    background-color:rgb(10 30 37 /var(--tw-bg-opacity));
+    --tw-text-opacity:1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+    font-family:'Apercu Mono','Courier ',monospace;
+}
+.grand-parent{
+    display:flex; flex-direction: column;
+    padding:4rem 2.5rem 2.5rem; border:2px solid black;
+}
+.child1 img{
+    width:73px;
+    height:auto;
+}
+.parent-1{
+    display:flex;
+    gap: 13.2vw;
+    padding-bottom: 1.3vw;
+    border-bottom:1.6px solid rgb(244, 243, 243) ;
+}
+.child2 a , .parent2-1st-child a{
+    text-decoration: none;
+    color: inherit;
+    font-family: inherit; text-transform: uppercase;
+}
+.grid-container{
+    display: grid;
+    grid-template-rows:1fr 1fr 1fr 1fr;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    column-gap: 9.7vw;
+    row-gap:11.3px;
+    letter-spacing: 2.3px; font-size:0.86rem;
+}
+/* 2nd part of the footer  parent2 container styling */
+.parent-2{
+    font-size:0.86rem;
+    padding-top:1.2vw;
+}
+.parent2-1st-child{
+    display:flex; gap:2.3vw; letter-spacing: 2.3px;
+    margin-bottom:2vw; 
+}
+.parent2-2nd-child{
+    display: flex; justify-content: space-between;
+}
+.parent2-2nd-child span{
+    font-family: Apercu Pro, sans-serif;
+}
+/* now parent 2 - 2nd child - 2nd child layout */
+.social-media-icons{
+    display: flex; gap:3vw;
+}
+/* hover effect for the footer container */
+.green-hov:hover {
+    color:#8cd095;
+}
+.icon:hover{
+    filter:brightness(0.7);
+}

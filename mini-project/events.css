@@ -1,0 +1,271 @@
+:root{
+  --cream:#f6f6ea;
+  --ink:#0e2428;
+  --line:#0e242855;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    -webkit-font-smoothing: antialiased;
+
+}
+
+@font-face{
+    font-family:'Apercu Pro';
+    src: /* url(fonts/apercu-mono-regular-pro.woff2) format('woff2'), */
+        url(fonts/apercu-regular-pro.woff2) format('woff2');
+    font-weight:normal;
+    font-style: normal;
+}
+@font-face{
+    font-family:'Tobias';
+    src: url(fonts/Tobias-Light.woff2) format('woff2');
+    font-weight:800;
+
+}
+body{
+    min-height: 100vh;
+    color:hsl(222.2 84% 4.9%);
+    font-family: Apercu Pro, sans-serif;
+    letter-spacing: normal;
+    font-style: normal;
+    --tw-bg-opacity: 1;
+    background-color:rgb(245 245 235 / var(--tw-bg-opacity)); 
+}
+body{
+    display: block;
+}
+
+.head{
+    --tw-bg-opacity: 1;
+    background-color: rgb(245 245 235 / var(--tw-bg-opacity));
+    border-bottom: 1px solid black;
+    display:flex;
+    justify-content:center;
+    flex-grow: 1;
+    width:100%;
+    height:4rem;
+    padding:16px 40px 16px 0px; 
+}
+.position{
+    position:fixed; z-index: 800;
+}
+.container{
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    width:100%;
+}
+
+.first_item img{
+    margin-left: 40px;
+    margin-right: 40px;
+    width:97px;
+    height:auto;
+    max-width:100%;
+}
+.second_item{
+    display:flex;
+    gap:2rem; /*1rem = 16px */
+    align-items:center;
+
+}
+.apply{
+    border: 1.6px solid black; border-radius: 40px; padding:8.6px; 
+    transition: all ease-in;
+}
+.apply:hover,.port:hover{
+    background-color: #A3C9A8; border: 1.6px solid #A3C9A8; border-radius: 40px; }
+
+.second_item a{
+    text-decoration: none; padding:8.6px; 
+    transition: all ease-in;
+    color : inherit;
+    font-family:  Apercu Pro, sans-serif;
+    letter-spacing: 2px; }
+.second_item .nav-bar{
+    font-size:x-large; border:0px; background-color: inherit;  color: inherit;
+    font-style:inherit;}
+
+
+/* menu css styling done below this  */
+.menu{
+    display: none; 
+    background: #ffffff; 
+    font-family: 'Apercu Mono','Courier ',monospace;  position: fixed; margin-top: 4.4vw;  width:100%;  height:25vw;   z-index:800;                                         
+}
+.grid-child{
+    display: grid; grid-template-columns: 1fr 1fr 1fr 1fr ; row-gap: 2.2vw; column-gap: 5.9vw;
+    margin: 2.9vw 8vw 3vw 3vw;
+}
+.grid-child  p{font-size: 0.74rem ; letter-spacing: 2px;}
+.grid-child h6{ font-family:'Tobias',serif ;
+    line-height:2.5vw;
+    font-size:1.3rem;
+    letter-spacing: -0.7px;
+    width:90%;}
+.second-child{
+    display: flex;
+}
+.grid-child a{ text-decoration: none; color: inherit;}
+.grid-child a:hover{ color:#42A050; }
+#menu-toggle{ display: none; }
+#menu-toggle:checked ~ .menu{
+    display: block;
+}
+
+.nav-bar{ transition: transform 0.3s ease;}
+
+/* small transition for the nav-bar */
+#menu-toggle:checked ~ .head .nav-bar{
+    transform: rotate(45deg);
+   
+}
+
+/* hero section styling starts from here */
+.hero{
+  background:linear-gradient(to right,#F5C8C8,#EEABAB,#E68F90);
+  padding:140px 80px;
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  align-items:center;
+}
+.hero h1{ font-family: 'Tobias',serif ;
+  font-size:70px;
+  margin:10px 0;
+}
+
+.hero small{
+  letter-spacing:2px;
+}
+.hero p{
+  max-width:520px;
+  line-height:1.6;
+}
+.image{ margin-left: 16vw;}
+.section-title{ font-family: 'Tobias',serif ;
+  text-align:center;
+  font-size:56px;
+  margin:120px 0 80px;
+}
+.gallery{margin-left: auto; margin-right: auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:40px; width: 85%;
+}
+.card img{
+  width:100%;
+  border-radius:2px;
+}
+.card p{
+  text-align:center;
+  margin-top:12px;
+  font-style:italic;
+}
+.offer{
+  display:grid;
+  grid-template-columns:1fr 1.6fr;
+  gap:120px;
+  padding:120px 40px;
+}
+.offer h2{ font-family: 'Tobias',serif ;
+  font-size:60px;
+  margin-bottom:20px;
+}
+.accordion-item{
+  border-top:1px solid var(--line);
+  padding:26px 0;
+}
+.accordion-header{
+  display:flex;
+  justify-content:space-between;
+  font-size:22px;
+  cursor:pointer;
+}
+.accordion-content{
+  margin-top:15px;
+  line-height:1.6;
+  display:none;
+}
+.cta{
+  margin:140px auto;
+  max-width:1100px;
+  padding:100px;
+  border-radius:20px;
+  background:linear-gradient(120deg,#b9d8f1,#6fa8d6);
+  text-align:center;
+}
+.cta h2{ font-family: 'Tobias',serif ;
+  font-size:56px;
+}
+.cta button{
+  margin-top:40px;
+  padding:12px 28px;
+  border:2px solid #000;
+  border-radius:40px;
+  background:none;
+  cursor:pointer;
+}
+/* css styling of the footer container */
+footer{
+    --tw-bg-opacity:1;
+    background-color:rgb(10 30 37 /var(--tw-bg-opacity));
+    --tw-text-opacity:1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+    font-family:'Apercu Mono','Courier ',monospace;
+}
+.grand-parent{
+    display:flex; flex-direction: column;
+    padding:4rem 2.5rem 2.5rem; border:2px solid black;
+}
+.child1 img{
+    width:73px;
+    height:auto;
+}
+.parent-1{
+    display:flex;
+    gap: 13.2vw;
+    padding-bottom: 1.3vw;
+    border-bottom:1.6px solid rgb(244, 243, 243) ;
+}
+.child2 a , .anchor a{
+    text-decoration: none;
+    color: inherit;
+    font-family: inherit; text-transform: uppercase;
+    transform: scaleY(0.95);
+}
+.grid-container{
+    display: grid;
+    grid-template-rows:1fr 1fr 1fr 1fr;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    column-gap: 9.7vw;
+    row-gap:11.3px;
+    letter-spacing: 2.3px; font-size:0.86rem;
+}
+/* 2nd part of the footer  parent2 container styling */
+.parent-2{
+    font-size:0.86rem;
+    padding-top:1.2vw;
+}
+.parent2-1st-child{
+    display:flex; gap:2.3vw; letter-spacing: 2.3px;
+    margin-bottom:2vw;
+}
+.parent2-2nd-child{
+    display: flex; justify-content: space-between;
+}
+.parent2-2nd-child span{
+    font-family: Apercu Pro, sans-serif;
+}
+/* now parent 2 - 2nd child - 2nd child layout */
+.social-media-icons{
+    display: flex; gap:3vw;
+}
+/* hover effect for the footer container */
+.green-hov:hover {
+    color:#8cd095;
+}
+.icon:hover{
+    filter:brightness(0.7);
+}

@@ -1,0 +1,673 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    -webkit-font-smoothing: antialiased;
+
+}
+
+@font-face{
+    font-family:'Apercu Pro';
+    src: /* url(fonts/apercu-mono-regular-pro.woff2) format('woff2'), */
+        url(fonts/apercu-regular-pro.woff2) format('woff2');
+    font-weight:normal;
+    font-style: normal;
+}
+@font-face{
+    font-family:'Tobias';
+    src: url(fonts/Tobias-Light.woff2) format('woff2');
+    font-weight:800;
+
+}
+body{
+    min-height: 100vh;
+    color:hsl(222.2 84% 4.9%);
+    font-family: Apercu Pro, sans-serif;
+    letter-spacing: normal;
+    font-style: normal;
+}
+body{
+    display: block;
+}
+
+.head{
+    --tw-bg-opacity: 1;
+    background-color: rgb(245 245 235 / var(--tw-bg-opacity));
+    border-bottom: 1px solid black;
+    display:flex;
+    justify-content:center;
+    flex-grow: 1;
+    width:100%;
+    height:4rem;
+    padding:16px 40px 16px 0px; 
+}
+.position{
+    position:fixed; z-index: 800;
+}
+.container{
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    width:100%;
+}
+
+.first_item img{
+    margin-left: 40px;
+    margin-right: 40px;
+    width:97px;
+    height:auto;
+    max-width:100%;
+}
+.second_item{
+    display:flex;
+    gap:2rem; /*1rem = 16px */
+    align-items:center;
+
+}
+.apply{
+    border: 1.6px solid black; border-radius: 40px; padding:8.6px; 
+    transition: all ease-in;
+}
+.apply:hover,.port:hover{
+    background-color: #A3C9A8; border: 1.6px solid #A3C9A8; border-radius: 40px; }
+
+.second_item a{
+    text-decoration: none; padding:8.6px; 
+    transition: all ease-in;
+    color : inherit;
+    font-family:  Apercu Pro, sans-serif;
+    letter-spacing: 2px; }
+.second_item .nav-bar{
+    font-size:x-large; border:0px; background-color: inherit;  color: inherit;
+    font-style:inherit;}
+
+
+/* menu css styling done below this  */
+.menu{
+    display: none; 
+    background: #ffffff; 
+    font-family: 'Apercu Mono','Courier ',monospace;  position: fixed; margin-top: 4.4vw;  width:100%;  height:25vw;   z-index:800;                                         
+}
+.grid-child{
+    display: grid; grid-template-columns: 1fr 1fr 1fr 1fr ; row-gap: 2.2vw; column-gap: 5.9vw;
+    margin: 2.9vw 8vw 3vw 3vw;
+}
+.grid-child  p{font-size: 0.74rem ; letter-spacing: 2px;}
+.grid-child h6{ font-family:'Tobias',serif ;
+    line-height:2.5vw;
+    font-size:1.3rem;
+    letter-spacing: -0.7px;
+    width:90%;}
+.second-child{
+    display: flex;
+}
+.grid-child a{ text-decoration: none; color: inherit;}
+.grid-child a:hover{ color:#42A050; }
+#menu-toggle{ display: none; }
+#menu-toggle:checked ~ .menu{
+    display: block;
+}
+
+.nav-bar{ transition: transform 0.3s ease;}
+
+/* small transition for the nav-bar */
+#menu-toggle:checked ~ .head .nav-bar{
+    transform: rotate(45deg);
+   
+}
+
+/* main1 / hero content styling done here */
+
+.founder-hero {
+  padding: 9rem 10vw 4rem 12vw;
+  background:linear-gradient(to right, #DCCBB7,#B79C78, #987243);
+  color: rgb(0, 0, 0);
+  font-weight: thin;
+  display: flex; gap: 6rem;
+  align-items: center;
+}
+
+.founder-hero h1 {
+    font-family:'Tobias',serif ;
+    line-height:3.4vw;
+    font-size:3.7rem;
+    letter-spacing: -1px;
+    width:90%;
+}
+.content{
+    display: flex;
+    flex-direction: column; gap: 1.29rem;
+}
+.content span{ font-size: 0.89rem ; letter-spacing: 2.4px;}
+
+.founder-hero p {
+  font-family: Apercu Pro, sans-serif;
+  max-width: 800px;font-size: 1.2vw;
+  line-height: 1.2; 
+  margin-top: 1.8vw;
+}
+/* mutiple square animation  */
+.sphere-container {
+    width: 400px;
+    height: 400px;
+    perspective: 1000px; /* Gives the 3D depth effect */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sphere {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotate-cube 10s linear infinite; /* The parent rotates everything */
+}
+
+.face {
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    border: 1px solid #423a21; border-radius: 30px;
+    background: rgba(193, 184, 134, 0.114); 
+    box-shadow: inset 0 0 20px rgba(78, 127, 148, 0.5);
+}
+
+.front  { transform: translateZ(130px); }
+.back   { transform: rotateY(180deg) translateZ(130px); }
+.right  { transform: rotateY(90deg) translateZ(130px); }
+.left   { transform: rotateY(-90deg) translateZ(130px); }
+.top    { transform: rotateX(90deg) translateZ(130px); }
+.bottom { transform: rotateX(-90deg) translateZ(130px); }
+
+.face2{position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 1px solid #423a21; border-radius: 20px;
+    background: rgba(193, 184, 134, 0.114); 
+    box-shadow: inset 0 0 20px rgba(78, 127, 148, 0.5);
+}
+.smallcube1,.smallcube2{animation: rotate-small-cube 10s linear infinite alternate;}
+.smallcube:hover{ animation-play-state: paused; }
+
+.front2  { transform: translateZ(49px); }
+.back2  { transform: rotateY(180deg) translateZ(49px); }
+.right2 { transform: rotateY(90deg) translateZ(49px); }
+.left2   { transform: rotateY(-90deg) translateZ(49px); }
+.top2    { transform: rotateX(90deg) translateZ(49px); }
+.bottom2 { transform: rotateX(-90deg) translateZ(49px); }
+
+
+@keyframes rotate-cube {
+    0% { transform: rotateX(0deg) rotateY(0deg); }
+    100% { transform: rotateX(360deg) rotateY(360deg); }
+}
+@keyframes rotate-small-cube {
+    0% { transform: rotateX(30deg) rotateY(-40deg); }
+    100% { transform: rotateX(340deg) rotateY(340deg); }
+}
+
+
+/* base styling for main2 container */
+.main2{
+    --tw-bg-opacity: 1;
+    background-color: rgb(245 245 235 / var(--tw-bg-opacity));
+}
+.margin{
+    margin:0 auto 0 auto;
+}
+h2{font-family:'Tobias',serif ;
+    line-height:3.1vw;
+    font-size:2.9rem;
+    letter-spacing: -1px;
+    width:90%;}
+
+/* main2 section 1 content starts from here */
+.main2-sect-1{
+    display: flex; flex-direction: column;
+    gap:3.5vw;
+    padding:4rem 1rem 5rem 1rem;
+    width:81%;
+}
+.first-child{
+    display: flex; flex-direction: column; gap:1.3vw; width:100%;
+}
+.first-child h2{ width:60%;}
+.first-child span{
+    font-family: Apercu Pro, sans-serif;
+    font-size:18px;
+    line-height:21px;
+}
+.flex-row{ display: flex; justify-content: space-between;}
+.rounded-box{
+    display:flex; align-items: center; 
+    border: 1.6px solid black; border-radius: 20px; box-sizing: border-box;
+    width:18.4%; height: 2.4rem; 
+    padding:0.2px 3px 0.2px 12px ;
+    letter-spacing: 1.6px;
+    transition: all 0.5s ease-in-out;
+}
+.rounded-box span{
+    font-size: 0.89rem;
+    width: 17vw;
+}
+.rounded-box .arrow{
+    background: black; color: aliceblue; border-radius: 50%;
+    padding:3.7px;
+    transition: all 500ms ease;
+    width:18.5%; height:auto;
+    text-align: center;
+}
+.rounded-box:hover{
+   width: 18.9%;
+   .arrow{
+     transform:translateX(3px) ;
+     background-color: rgb(150, 254, 181); }
+   
+}
+
+.second-child{ display:flex; border-top: 1.4px solid black ; 
+    padding:1.4rem 1.67rem ; gap:1.7rem;
+}
+.second-child span{ text-transform: uppercase;font-size: 0.89rem ; letter-spacing: 2px;}
+
+
+.second-child p{ font-family: Apercu Pro, sans-serif;
+  max-width: 800px;font-size: 1.01rem;
+  line-height: 1.2; 
+  margin-top: 1.8vw;
+}
+#bold{ font-weight: 600; font-size: 1.5rem;}
+.grey-box{ background-color: rgba(184, 183, 183, 0.849); padding: 6px; border-radius: 20px; transition: all 0.3s ease-in-out;}
+
+.flex-item:hover{ 
+    .grey-box{background-color: #A0D0A8;}
+}
+
+/* main2 section 2 css styling done here */
+.main2-sect-2{
+    display: flex;  
+    width:81%; 
+    border-radius: 15px;
+    padding:35px;
+    background: linear-gradient(to right,#F4C7C7,#EEACAC,#E69090);
+}
+.left-para{ width:95%; font-family: Apercu Pro, sans-serif;
+  max-width: 800px;font-size: 1.2vw; line-height: 1.2; padding-left: 4px !important;
+}
+.first-item{ display: flex; flex-direction: column; width:80%; gap:1.3vw; }
+
+.second-item{ display: flex;flex-direction: column; gap:4vw;width:80%; 
+padding-top:1.6vw;}
+
+.data{ display: flex;
+     gap:1.1vw;
+    line-height: 1.2rem;
+    width:97%; }
+
+.data h2{
+    font-family:'Tobias',serif ; font-weight:300; font-size:3.7rem;
+    letter-spacing: -.02em;
+}
+.sub-data{
+    display: flex; flex-direction: column;
+    border-top: 1.6px solid black; gap:1.6vw;
+    width:18vw;
+    padding-top: 1.2rem;
+    box-sizing: border-box;
+}
+.one-border{ border-top: 1.7px solid black;
+}
+.no-border{ border-top: none;}
+/* font-size of h2 is changed in 2nd and 3rd child box of parent(second-item) with flex-column layout */
+.font-size h2{
+    font-size: 3rem;
+    line-height: 3.1rem;
+}
+
+/* main 2 section 3 css styling is done here */
+.main2-sect-3{display: flex;  width:86.7%; 
+    padding-bottom: 3vw; align-items: center; margin-top: 3vw;
+    gap:1vw;}
+
+.scroll-window{ display: flex;gap:1.2vw; overflow:hidden; width:99%;}
+
+.scroll-content{ display: flex;gap:0.9vw; 
+    animation: scroll-img 30s infinite ease-in-out alternate;
+}
+
+.scroll-content img{ width:25.697vw; height: auto; border-radius: 7px;}
+
+.arrows{ font-size: 1.8rem; 
+    border: 1.3px solid black; border-radius: 47%;
+    padding: 1.9px 7.8px ; 
+}
+.right-arrow{ --x:5px;}
+.left-arrow{ --x:-5px;}
+.arrows:hover{ color:rgb(114, 129, 109) ; transform: translateX(var(--x));}
+
+/* img hover effects */
+.zoom{ overflow:hidden; 
+    transition: transform 3s ease-in-out; 
+    position: relative; width:25.9vw; height: auto;}
+.bor-rad{ border-radius: 20px;}
+
+.zoom::after {
+  content: "ECOSYSTEM";
+  color: rgb(174, 226, 101); font-size: 3vw;
+  position: absolute; left: 0;  bottom: -50px; 
+  display: flex; flex-direction:column; justify-content:flex-end; 
+  padding: 0px 0px 10px 18px;
+  width: 100%;
+  height: 130%; /* height of shadow overlay */
+  background: rgba(0, 0, 0, 0.279);
+  opacity: 0; 
+  transition: all 0.4s ease; 
+}
+.zoom:hover::after {
+  opacity: 1.3;
+  bottom: 0px;
+}
+/* giving associated places name to render on the image  */
+.zoom2::after{content: "INNOVATION";}
+.zoom3::after{content: "MARKETS"}
+.zoom4::after{content: "NETWORK"}
+.zoom5::after{content:  "MENTORSHIP"}
+.zoom6::after{content: "IMPACT"}
+.zoom7::after{content: "ENGAGEMENT";}
+.zoom8::after{content: "STRATEGY";}
+.zoom9::after{content: "COMMUNITY";}
+
+.zoom:hover{
+    img{
+     transform: scale(1.28);
+     border-radius: 18px;}
+}
+
+/* defining a image scrolling animation */
+@keyframes scroll-img{
+0%{
+    transform: translateX(0);}
+10%{
+    transform: translateX(0);}
+25% { transform: translateX(-79.691vw); } /* Move to next 3 */
+45% { transform: translateX(-79.691vw); animation-delay: 1s; } /* Pause */
+    
+50% { transform: translateX(-160.382vw); } 
+70% { transform: translateX(-160.382vw); animation-delay: 1s;} 
+
+90%{transform: translateX(0);}    
+100%{ transform: translateX(0);}
+}
+
+/* main 2 section 4 css styling done here */
+.main2-sect-4{
+    display: flex; flex-direction:column; width:80%;
+    margin-top: 4.8vw;
+
+}
+.first-flex{display: flex; flex-direction: column; gap:1.3vw; }
+.first-flex span{
+    font-family: Apercu Pro, sans-serif;
+    font-size:18.5px;
+    line-height:21px;
+}
+.second-flex {
+    display: flex; font-size: 0.94rem;
+    gap:1.7vw;
+    letter-spacing: 2px;
+    margin-top: 2.6vw;
+    margin-bottom: 2.8vw;
+}
+.second-flex span{
+    border-radius: 5.7px;  border: none; 
+    padding:13px; letter-spacing: 2px; background-color:inherit;
+}
+.second-flex .default-green{ background-color: #A3C9A8;}
+
+.grid-layout{
+    display: grid;
+    grid-template-columns: repeat(4, minmax(250px, 1fr)); /*changed to fix the round image issue */
+    row-gap: 3vw;
+    column-gap: 1.4vw;
+}
+.grid-layout img{
+    width:100%; height:auto; 
+}  
+.hover{overflow: hidden; width:98%; }
+
+.grid-layout .zoom{ border-radius: 20px; width:100%; }
+
+/* discription styling for every card */
+.about-card{ display:flex; flex-direction: column; margin-top: 1.5vw;
+    gap:1.4vw;  
+
+}
+.greybox{
+    padding:5px; background-color: rgb(200, 200, 200); border-radius: 19px;
+    width:fit-content; padding-left: 13px; font-size: 0.85rem;
+    padding-right: 13px;
+}
+
+.about-card h2{ font-size:2rem ; line-height: 2.3vw;}
+
+.about-card span{ line-height: 1.26vw;}
+.whitebox{
+    border: 1.6px solid black; border-radius:13px ;
+    width:12%; padding:3px 13px 3px 11px; 
+    transition: all 0.4s linear;
+}
+/* hover effects for the grid-container */
+.hover:hover{
+   .whitebox{
+       background-color: #A3C9A8; border: 1.6px solid  #A3C9A8;}
+   .greybox{ background-color: #A3C9A8 ;}
+}
+
+.btn:hover{ background-color:  #A3C9A8 ;}
+.grid-zoom1::after{ content:"USA"; font-size: 2.4vw; }
+.grid-zoom3::after{ content:"MENA"; font-size: 2.4vw;}
+.grid-zoom4::after{ content:"JAPAN"; font-size: 2.4vw;}
+.grid-zoom6::after{ content:"SAUDI ARABIA"; font-size: 2.4vw;}
+
+/* main 2 section-5 css styling done here */
+.main2-sect-5{ display: flex; width:82%; padding-top:3vw;}
+.flex-col{
+    display: flex; flex-direction: column;
+    gap:3.4vw;  margin:4.7vw 0.9vw  0 0;
+}
+.grid-parent{
+    display: grid; 
+    grid-template-columns: 0.9fr 1fr;
+    row-gap:3vw;
+    column-gap: 0.3vw;
+}
+.grid-parent img{
+    width:13%;
+}
+.items{
+    display: flex; flex-direction: column; gap:16px;
+    line-height: 18px;
+    width:98.4%;
+} 
+.items h2{
+    font-size: 2rem; line-height: 32px; width:86%;
+}
+.items span{
+    width: 90%;
+}
+/* main 2 section-6 css styling done here */
+
+.main2-sect-6{ display: flex; width:82%; 
+    margin-top:13.4vw;
+    gap:1.7vw;
+}
+.flex-child1{ display: flex; 
+    flex-direction: column;
+    gap:1.8vw;
+}
+
+.flex-child2{ 
+    display: flex; flex-direction: column; gap:1vw;
+}
+.flex-child2 h2{ 
+    font-size: 2.3rem; line-height: 32px; width:86%;
+}
+.global-card{
+    border-radius: 17px;
+    display: flex; flex-direction: column; gap:1.6vw;
+    padding:2.3vw;  background-color: #FDFEFD;
+}
+
+.global-card .space-btwn{
+    display: flex; justify-content: space-between;
+}
+
+.space-btwn .whitebox{width:5.2%; border-radius: 17px; font-size: 1.6vw;}
+
+/* on hover effect for the above cards */
+.global-card:hover{
+    background: linear-gradient(to right,#FEFEFE,#DAF3DE,#C4EBCB);
+    box-shadow: 0px 10px 30px -5px rgba(0,0,0,0.1);
+}
+.global-card .whitebox:hover{
+    background-color: #A3C9A8; border: 1.6px solid  #A3C9A8;
+    
+}
+
+/* main2 section(contact card) css styling is done here */
+.contact-card {
+    display:flex;
+    flex-direction: column;
+    letter-spacing: 0.7px;
+    row-gap: 2vw; width:82%;
+    text-align: center;
+    background: linear-gradient(to right, #A9CBE7,#5899CE);
+    border-radius: 10px;
+    padding: 43px;
+    margin-top: 5vw;
+}
+.contact-card h2{ width:100%;}
+.card-content{font-size:1.2vw;}
+.last_p{
+    margin:18px 96.539px 25px 96.539px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.last_part{
+    display:flex; align-items: center; gap:10px;
+    border: 1.8px solid black; border-radius: 18px; box-sizing: border-box;
+    width:auto; height: 2.3vw;
+    padding:2px 2px 2px 10px ;
+    letter-spacing: 1.6px;
+    font-size: 0.87rem;
+}
+
+.last_part:hover{ gap:16px; }
+.last_part .arrow{
+    background: black; color: aliceblue; border-radius: 50%;
+    padding:5px;
+    transition: all 500ms ease;
+    width:27px; height:auto;
+    text-align: center;
+    justify-content: end; transition: all 0.4s ease-in-out;
+
+}
+.last_part .arrow:hover{
+   transform:translateX(8px) ;
+   background-color: rgb(150, 254, 181);
+}
+
+/* css styling of the last section  (disclaimer ) of main2 tag  */
+.main2-sect-8{ 
+    width:82%;  padding:5.4vw 2vw 4vw;
+}
+.topic , .disclaim{
+    font-family:'Apercu Mono','Courier ',monospace ;
+    letter-spacing: 1px;
+    line-height: 1.6;
+}
+
+.topic{
+    margin:10px 0px 30px; 
+    transition: all ease-out;
+}
+.topic p{ font-size: 0.9rem;padding-left: 5px;border-radius: 16px;
+}
+.topic:hover{
+    background-color:#A3C9A8;
+    border:2px solid #A3C9A8 ; border-radius:16px;
+    width:10%; 
+}
+.disclaim{
+    font-size: 0.68rem;
+}
+
+
+/* css styling of the footer container */
+footer{
+    --tw-bg-opacity:1;
+    background-color:rgb(10 30 37 /var(--tw-bg-opacity));
+    --tw-text-opacity:1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+    font-family:'Apercu Mono','Courier ',monospace;
+}
+.grand-parent{
+    display:flex; flex-direction: column;
+    padding:4rem 2.5rem 2.5rem; border:2px solid black;
+}
+.child1 img{
+    width:73px;
+    height:auto;
+}
+.parent-1{
+    display:flex;
+    gap: 13.2vw;
+    padding-bottom: 1.3vw;
+    border-bottom:1.6px solid rgb(244, 243, 243) ;
+}
+.child2 a , .anchor a{
+    text-decoration: none;
+    color: inherit;
+    font-family: inherit; text-transform: uppercase;
+    transform: scaleY(0.95);
+}
+.grid-container{
+    display: grid;
+    grid-template-rows:1fr 1fr 1fr 1fr;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    column-gap: 9.7vw;
+    row-gap:11.3px;
+    letter-spacing: 2.3px; font-size:0.86rem;
+}
+/* 2nd part of the footer  parent2 container styling */
+.parent-2{
+    font-size:0.86rem;
+    padding-top:1.2vw;
+}
+.parent2-1st-child{
+    display:flex; gap:2.3vw; letter-spacing: 2.3px;
+    margin-bottom:2vw;
+}
+.parent2-2nd-child{
+    display: flex; justify-content: space-between;
+}
+.parent2-2nd-child span{
+    font-family: Apercu Pro, sans-serif;
+}
+/* now parent 2 - 2nd child - 2nd child layout */
+.social-media-icons{
+    display: flex; gap:3vw;
+}
+/* hover effect for the footer container */
+.green-hov:hover {
+    color:#8cd095;
+}
+.icon:hover{
+    filter:brightness(0.7);
+}
+
+
+
+
